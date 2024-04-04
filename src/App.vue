@@ -7,12 +7,27 @@ import Footer  from './components/Footer.vue'
 <template>
   
   <div id="app">
-    <Navbar />
-    <router-view />
+    <div class="page">
+    <div class="content">
+      <Navbar />
+      <router-view />
+    </div>
     <Footer />
+  </div>
+   
+ 
+   
   </div>
 </template>
 
 <style scoped>
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
+.content {
+  flex: 1;
+}
 </style>
