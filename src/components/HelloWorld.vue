@@ -1,44 +1,69 @@
 <script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true
-  }
-})
+import { ref} from 'vue';
+const code = "Hello, I'm Shreya"
+const typeValue = ref('');
+
+const typeEffect = () => {
+  if (typeValue.value.length < code.length) {
+    typeValue.value += code.charAt(typeValue.value.length);
+    setTimeout(typeEffect, 100);
+  } 
+}
+typeEffect()
 </script>
 
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
-    </h3>
+  <div class="home">
+    <div class="intro">
+      <img src="@/assets/logo.svg" alt="Shreya's Image" class="profile-image">
+      <h1 class="typingEffect">{{ typeValue }}</h1>
+      <p class="typing">.Net Developer</p>
+    </div>
   </div>
 </template>
 
 <style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  position: relative;
-  top: -10px;
+.home {
+  background: linear-gradient(to bottom right, #4c3a3a, #333333);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
+.intro {
   text-align: center;
+  margin-bottom: auto;
 }
 
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
+.profile-image {
+  width: 150px; /* Adjust according to your preference */
+  height: 150px; /* Adjust according to your preference */
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+h1, p {
+  color: white;
+  font-weight: bold;
+  margin: 0;
+  font-size: 3rem;
+}
+
+.typingEffect {
+  padding-right: 5px;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+  0%, 45% {
+    border-color: transparent;
+  }
+  50%, 100% {
+    border-color: white;
   }
 }
+
 </style>
