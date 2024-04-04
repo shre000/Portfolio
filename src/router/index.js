@@ -4,6 +4,7 @@ import About from '../components/About.vue';
 import Contact from '../components/Contact.vue'
 import HelloWorld from '@/components/HelloWorld.vue';
 import Projects from '@/components/Projects.vue';
+import Articles  from "@/components/Articles.vue";
 
 
 const router = createRouter({
@@ -28,6 +29,11 @@ const router = createRouter({
       path: '/Projects',
       name: 'Project',
       component: Projects
+    },
+    {
+      path: '/Articles',
+      name: 'Articles',
+      component: Articles
     }
   ]
 })

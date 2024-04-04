@@ -15,7 +15,7 @@ typeEffect()
 <template>
   <div class="home">
     <div class="intro">
-      <img src="@/assets/logo.svg" alt="Shreya's Image" class="profile-image">
+      <img src="@/assets/image.png" alt="Shreya's Image" class="profile-image">
       <h1 class="typingEffect">{{ typeValue }}</h1>
       <p class="typing">.Net Developer</p>
     </div>
